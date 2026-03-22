@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Banner Generator</title>
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎨</text></svg>">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <h1>Banner Generator</h1>
+    </header>
+
+    <div class="window-body">
+      <div class="controls">
+        <span class="controls-title">Options</span>
+
+        <div class="input-group">
+          <label for="text-input">Text:</label>
+          <input type="text" id="text-input" placeholder="Enter your text..." value="Banner" maxlength="30" autofocus>
+        </div>
+
+        <div class="input-row">
+          <div class="input-group">
+            <label for="font-select">Font:</label>
+            <select id="font-select"></select>
+          </div>
+          <div class="input-group">
+            <label for="size-select">Size:</label>
+            <select id="size-select">
+              <option value="7px">Small</option>
+              <option value="9px" selected>Medium</option>
+              <option value="12px">Large</option>
+              <option value="16px">X-Large</option>
+            </select>
+          </div>
+          <div class="input-group">
+            <label for="color-select">Color:</label>
+            <select id="color-select">
+              <option value="">None</option>
+              <option value="black">Black</option>
+              <option value="red">Red</option>
+              <option value="green">Green</option>
+              <option value="yellow">Yellow</option>
+              <option value="blue">Blue</option>
+              <option value="magenta">Magenta</option>
+              <option value="cyan">Cyan</option>
+              <option value="white">White</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="output-section">
+        <div class="output-header">
+          <span class="filename">banner.txt</span>
+          <div class="output-actions">
+            <button id="copy-btn" title="Copy to clipboard">Copy</button>
+            <button id="download-btn" title="Download as banner.txt">Download</button>
+          </div>
+        </div>
+        <div class="preview-wrapper">
+          <pre id="preview"></pre>
+        </div>
+        <div id="color-preview" class="color-preview-section" style="display:none;">
+          <div class="output-header">
+            <span class="filename">Color Preview</span>
+          </div>
+          <div class="preview-wrapper dark">
+            <pre id="color-preview-content"></pre>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <a href="http://github.com/ishinvin/banner" target="_blank">GitHub</a> &middot; Built with <a
+        href="http://www.figlet.org/" target="_blank">FIGlet</a> fonts
+    </footer>
+  </div>
+
+  <div id="toast" class="toast">Copied to clipboard!</div>
+
+  <script src="https://unpkg.com/figlet@1.8.0/lib/figlet.js"></script>
+  <script src="app.js"></script>
+</body>
+
+</html>
